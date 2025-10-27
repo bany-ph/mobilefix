@@ -1,4 +1,4 @@
-package crudactivity.mobilefix.exceptions;
+package crudactivity.mobilefix.exceptions.custom;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {
