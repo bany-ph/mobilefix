@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDTO saveUser(UserRequestDTO user) {
-        return null;
+        return userMapper.toDTO(userRepository.save(userMapper.toEntity(user)));
     }
 
     @Override
@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserSummaryDTO> getAllUsersSummary() {
-        return List.of();
+        return userRepository.findAll().stream().map(userMapper::toSummaryDTO).toList();
     }
 
     @Override

@@ -1,12 +1,12 @@
 package crudactivity.mobilefix.controllers;
 
+import crudactivity.mobilefix.dtos.request.UserRequestDTO;
 import crudactivity.mobilefix.dtos.response.UserResponseDTO;
+import crudactivity.mobilefix.dtos.response.UserSummaryDTO;
 import crudactivity.mobilefix.services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +24,18 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public List<UserResponseDTO> getAllUsers(){
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/summary")
+    @ResponseStatus(HttpStatus.OK)
+    public List<UserSummaryDTO> getAllUsersSummary(){
+        return userService.getAllUsersSummary();
+    }
+
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserResponseDTO saveUser(@Valid @RequestBody UserRequestDTO requestDTO){
+        return userService.saveUser(requestDTO);
     }
 }
