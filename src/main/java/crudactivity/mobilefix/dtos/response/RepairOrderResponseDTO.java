@@ -1,20 +1,22 @@
 package crudactivity.mobilefix.dtos.response;
 
 
+import lombok.Data;
 
-    public class RepairOrderResponseDTO {
-        private Long id;
-        private String issueDescription;
-        private String techNotes;
-        //device
-        private String deviceBrand;
-        private String deviceModel;
-        private String deviceSerialNumber;
+@Data
+public class RepairOrderResponseDTO {
+    private Long id;
+    private String issueDescription;
+    private String techNotes;
+    //device
+    private String deviceBrand;
+    private String deviceModel;
+    private String deviceSerialNumber;
 
-        //status
-        private String statusName;
+    //status
+    private String statusName;
 
-        //user
-        private UserSummaryDTO customerUser;
-        private UserSummaryDTO assigneeTechUser;
-    }
+    //user
+    private UserSummaryDTO customerUser;
+    private UserSummaryDTO assigneeTechUser;
+}
