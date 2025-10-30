@@ -20,7 +20,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping()
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<UserResponseDTO> getAllUsers(){
         return userService.getAllUsers();
@@ -37,5 +37,10 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponseDTO saveUser(@Valid @RequestBody UserRequestDTO requestDTO){
         return userService.saveUser(requestDTO);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUserById(@PathVariable Long id){
+        userService.deleteUser(id);
     }
 }

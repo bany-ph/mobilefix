@@ -17,16 +17,19 @@ public class User {
     @Column(name = "password", unique = true)
     private String password;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id")
     private Role role;
 
     @Column(name = "full_name")
     private String fullName;
 
-    @Column(unique = true)
+    @Column(name = "email",unique = true)
     private String email;
 
     private boolean enabled = true;
+
+    @Transient
+    private Long roleId;
 
 }

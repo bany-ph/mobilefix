@@ -3,6 +3,7 @@ package crudactivity.mobilefix.services;
 import crudactivity.mobilefix.dtos.request.UserRequestDTO;
 import crudactivity.mobilefix.dtos.response.UserResponseDTO;
 import crudactivity.mobilefix.dtos.response.UserSummaryDTO;
+import crudactivity.mobilefix.entities.User;
 
 import java.util.List;
 
