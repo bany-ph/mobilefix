@@ -30,6 +30,6 @@ public class User {
     private boolean enabled = true;
 
     @Transient
-    private Long roleId;
+    private Long idRole;
 
 }

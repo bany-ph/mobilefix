@@ -15,7 +15,9 @@ public interface UserMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "enabled", ignore = true)
+    @Mapping(target = "role.id", source = "idRole")
     User toEntity(UserRequestDTO user);
+
 
     UserSummaryDTO toSummaryDTO(User user);
 }
