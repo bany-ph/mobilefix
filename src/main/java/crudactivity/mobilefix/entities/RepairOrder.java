@@ -42,4 +42,16 @@ public class RepairOrder {
 
     @Column(name = "tech_notes")
     private String techNotes;
+
+    @Transient
+    private Long idStatus = 1L;
+
+    @Transient
+    private Long idDevice;
+
+    @Transient
+    private Long idCostumer;
+
+    @Transient
+    private Long idAssignedTech ;
 }
