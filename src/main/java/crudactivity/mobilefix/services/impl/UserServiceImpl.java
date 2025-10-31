@@ -3,6 +3,7 @@ package crudactivity.mobilefix.services.impl;
 import crudactivity.mobilefix.dtos.request.UserRequestDTO;
 import crudactivity.mobilefix.dtos.response.UserResponseDTO;
 import crudactivity.mobilefix.dtos.response.UserSummaryDTO;
+import crudactivity.mobilefix.exceptions.custom.ResourceNotFoundException;
 import crudactivity.mobilefix.mappers.UserMapper;
 import crudactivity.mobilefix.repositories.UserRepository;
 import crudactivity.mobilefix.services.UserService;
@@ -28,6 +29,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserResponseDTO> getAllUsers() {
         return userRepository.findAll().stream().map(userMapper::toDTO).toList();
+    }
+
+    @Override
+    public UserResponseDTO getUserById(Long id) {
+        return userMapper.toDTO( userRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("User", id)));
     }
 
     @Override

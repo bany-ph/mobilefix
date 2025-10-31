@@ -33,6 +33,12 @@ public class UserController {
     }
 
 
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/{id}")
+    public UserResponseDTO getUserById(@PathVariable Long id){
+        return userService.getUserById(id);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponseDTO saveUser(@Valid @RequestBody UserRequestDTO requestDTO){
