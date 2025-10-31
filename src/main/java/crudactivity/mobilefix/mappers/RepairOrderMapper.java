@@ -12,8 +12,6 @@ public interface RepairOrderMapper {
     @Mapping(source = "device.model", target = "deviceModel")
     @Mapping(source = "device.serialNumber", target = "deviceSerialNumber")
     @Mapping(source = "status.statusName", target = "statusName")
-    @Mapping(source = "customerUser", target = "customerUser")
-    @Mapping(source = "assigneeTechUser", target = "assigneeTechUser")
     RepairOrderResponseDTO toDTO(RepairOrder repairOrder);
 
     @Mapping(target = "id", ignore = true)

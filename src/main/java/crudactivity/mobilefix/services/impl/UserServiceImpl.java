@@ -42,11 +42,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponseDTO updateUser(UserRequestDTO user) {
-        return null;
-    }
-
-    @Override
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
